@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Remote Watering</title>
+    <link rel="stylesheet" href="main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="controls">
+        <h1>Remote Watering</h1>
+        <div class="time-area button-area">
+            <button id="add-button">+10s</button>
+            <button id="sub-button">-10s</button>
+            <input id="seconds-input" type="number" value="80">
+        </div>
+        <div class="pump-area button-area">
+            <button id="pump1-button" data-id="1">Pump 1</button>
+            <button id="pump2-button" data-id="2">Pump 2</button>
+            <button id="pump3-button" data-id="3">Pump 3</button>
+        </div>
+        <button id="start-button" class="primary">Start</button>
+    </div>
+
+    <video-rtc class="player" autoplay muted></video-rtc>
+</video-rtc>
+    <script type="module" src="./video-rtc.js"></script>
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            document.querySelector("video-rtc").src = "wss://water.bakk.dev/cam/api/ws?src=front_door";
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

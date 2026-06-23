@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  padding: 0.8em;
+}
+
+h1 {
+    margin: 0;
+    margin-bottom: 0.4em;
+}
+
+button {
+    background-color: oklch(55.1% 0.027 264.364);
+    border: 0;
+    border-radius: 0.5em;
+    color: oklch(98.5% 0.002 247.839);
+    padding: 0.6em 1em;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: oklch(44.6% 0.03 256.802);
+}
+
+button.primary {
+    background-color: oklch(52.7% 0.154 150.069);
+}
+
+button.primary:hover {
+    background-color: oklch(44.8% 0.119 151.328);
+}
+
+button.selected {
+    background-color: oklch(52.7% 0.154 150.069);
+}
+
+button.selected:hover {
+    background-color: oklch(44.8% 0.119 151.328);
+}
+
+button[disabled], button[disabled]:hover {
+    background-color: oklch(44.6% 0.03 256.802);
+}
+
+video-rtc {
+    display: block;
+    width: auto;
+    height: calc(100vh - 10em);
+    background-color: black;
+    margin-top: 0.8em;
+    pointer-events: none;
+}
+
+video-rtc::-webkit-media-controls, video-rtc::-webkit-media-controls-enclosure, video-rtc::-webkit-media-controls-panel {
+    display: none !important;
+}
+
+.button-area {
+    display: flex;
+    gap: 0.4em;
+    margin-bottom: 0.8em;
+}
+
+.button-area input {
+    width: 4em;
+    font-weight: 500;
+}
+
+@media (max-width: 800px) {
+    h1 {
+        margin-top: 0.4em;
+    }
+
+    body {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 1em;
+
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 100dvh;
+        height: 100dvw;
+
+        transform: translate(-50%, -50%) rotate(90deg);
+        transform-origin: center;
+    }
+
+    video-rtc {
+        height: 100%;
+    }
+}
